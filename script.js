@@ -126,6 +126,14 @@ $.getJSON("geojson/zoning-markers.geojson", function (data){
   }).addTo(map);
 });
 
+// places a star on state capital of Hartford, CT
+var starIcon = L.icon({
+  iconUrl: 'star-18.png',
+  iconRetinaUrl: 'star-18@2x.png',
+  iconSize: [18, 18]
+});
+L.marker([41.7646, -72.6823], {icon: starIcon}).addTo(map);
+
 // Add Opacity control
 var opacity = L.control({position: 'topright'});
 opacity.onAdd = function (map) {
@@ -148,7 +156,7 @@ $('#rangeSlider').on('input', function() {
 })
 
 
-/* Add a custom image legend */
+// add custom legend https://www.figma.com/file/7JitgyYxiT3xR3fyoZttKb/otl-zoning-graphics
 var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function(map) {
